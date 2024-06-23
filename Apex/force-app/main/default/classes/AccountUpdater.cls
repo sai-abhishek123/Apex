@@ -3,8 +3,8 @@
 // $1,000,000 are updated.
 
 public class AccountUpdater {
-    public static List<Account> retrieveAccounts() {
-        List<Account> get_accounts=[Select Id, Name, Description from Account where Type=:'Prospect' and AnnualRevenue>1000000];
+    public static List<Account> retrieveAccounts(List<Account> acs) {
+        List<Account> get_accounts=[Select Id, Name, Description from Account where Type=:'Prospecting' and AnnualRevenue>1000000];
         for(Account a:get_accounts) {
             a.Description='Potential customer for future business';
         }
