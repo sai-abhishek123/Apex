@@ -3,7 +3,7 @@
 
 trigger Prevent_Opportunity on Opportunity (before insert,before update) {
     for(Opportunity o:Trigger.new) {
-        if((o.ExpectedRevenue==null || o.ExpectedRevenue<0) && o.StageName=='Closed Won') {
+        if((o.ExpectedRevenue==null || o.ExpectedRevenue<0) && o.StageName=='Closed Won') { 
             o.addError('Cannot be marked as Closed Won');
         }
     }

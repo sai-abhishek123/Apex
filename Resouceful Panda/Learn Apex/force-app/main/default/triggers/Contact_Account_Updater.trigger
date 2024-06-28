@@ -8,7 +8,7 @@ trigger Contact_Account_Updater on Contact (after insert, after update) {
     List<Account> account_list=[Select Id, Account_Type__c, (Select Id from Contacts) from Account where Id in :account_ids];
     // System.debug(account_list);
     for(Account a:account_list) {
-        a.Account_Type__c='Hello';
+        a.Account_Type__c='Hello'; 
     }
     update account_list;
 }
